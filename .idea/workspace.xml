@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3753e29a-11b7-4592-89d8-b53bdf6e1a15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/transactions/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transactions/src/main/java/com/nicoloboschi/pulsar/transactions/ProduceConsumeTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transactions/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/transactions/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1654766581668</updated>
       <workItem from="1654766584205" duration="3972000" />
-      <workItem from="1655125459023" duration="543000" />
+      <workItem from="1655125459023" duration="936000" />
     </task>
     <servers />
   </component>
