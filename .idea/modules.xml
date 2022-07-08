@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java-functions/java-functions.iml" filepath="$PROJECT_DIR$/java-functions/java-functions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-sink/java-sink.iml" filepath="$PROJECT_DIR$/java-sink/java-sink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pulsar-examples.iml" filepath="$PROJECT_DIR$/pulsar-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transactions/transactions.iml" filepath="$PROJECT_DIR$/transactions/transactions.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.bookkeeper:cpu-affinity:4.14.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/bookkeeper/cpu-affinity/4.14.4/cpu-affinity-4.14.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/bookkeeper/cpu-affinity/4.14.4/cpu-affinity-4.14.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/bookkeeper/cpu-affinity/4.14.4/cpu-affinity-4.14.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

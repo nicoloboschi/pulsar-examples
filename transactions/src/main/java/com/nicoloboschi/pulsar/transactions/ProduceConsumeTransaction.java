@@ -10,6 +10,7 @@ import org.apache.pulsar.client.api.SubscriptionInitialPosition;
 import org.apache.pulsar.client.api.transaction.Transaction;
 
 import java.nio.charset.StandardCharsets;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class ProduceConsumeTransaction {
@@ -20,6 +21,7 @@ public class ProduceConsumeTransaction {
         if (args.length > 0) {
             serviceUrl = args[0];
         }
+        final String topicName = "my-topic-" + UUID.randomUUID();
 
         @Cleanup final PulsarClient pulsarClient = PulsarClient.builder()
                 .serviceUrl(serviceUrl)
@@ -31,25 +33,36 @@ public class ProduceConsumeTransaction {
 
 
         @Cleanup
-        Producer<byte[]> producer = pulsarClient.newProducer(Schema.BYTES)
-                .topic("mytopic")
+        Producer<String> producer = pulsarClient.newProducer(Schema.STRING)
+                .topic(topicName)
                 .sendTimeout(0, TimeUnit.SECONDS)
                 .create();
 
 
-        producer.newMessage(transaction)
-                .value("hello".getBytes(StandardCharsets.UTF_8))
+        producer.newMessage()
+                .value("hellonormal1")
                 .send();
-        transaction.abort().get();
+
+        producer.newMessage(transaction)
+                .value("hellotrans")
+                .send();
 
 
+
+        producer.newMessage()
+                .value("hellonormal")
+                .send();
+
+        transaction.commit().get();
         @Cleanup
-        Consumer<byte[]> consumer = pulsarClient.newConsumer(Schema.BYTES)
-                .topic("mytopic")
+        Consumer<String> consumer = pulsarClient.newConsumer(Schema.STRING)
+                .topic(topicName)
                 .subscriptionInitialPosition(SubscriptionInitialPosition.Earliest)
                 .subscriptionName("sub1")
                 .subscribe();
-        final Message<byte[]> receive = consumer.receive(5, TimeUnit.SECONDS);
-        System.out.println("got: " + receive);
+        Message<String> msg;
+        while ((msg = consumer.receive(5, TimeUnit.SECONDS)) != null) {
+            System.out.println("got: " + msg.getValue() + " seq: " + msg.getSequenceId());
+        }
     }
 }
